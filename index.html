@@ -32,23 +32,29 @@
         <br />
         <button type="submit">Comment</button>
       </form>
+      <div>
+        <star-rating 
+          @rating-selected ="setRating" 
+          active-color="red" 
+          increment=".5"
+          :show-rating="false"
+        ></star-rating>
+        <h4>Average rating: {{ average }}</h4>
+      </div>
       <h3>Comments</h3>
       <div v-for="comment in comments[number]">
         <hr>
         <p>{{comment.text}}</p>
         <p><i>-- {{comment.author}}</i> on {{comment.time}}</p>
       </div>
-      <div>
-      <star-rating @rating-selected ="setRating"></star-rating>
-      </div>
+      
     </div>
   </div>
+  <script src="https://unpkg.com/vue-star-rating/dist/star-rating.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="./script.js"></script>
   <script src="./moment.js"></script>
-  <script src="https://unpkg.com/vue-star-rating/dist/star-rating.min.js"></script>
-
   <footer>
     <a href = "https://github.com/byu-cs-260-spring-2019/lab-3-creating-a-vue-xkcd-browser-Gundulin">Github</a>
   </footer>
